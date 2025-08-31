@@ -108,6 +108,51 @@
     /* Animasi scroll */
     .fade-in {opacity:0; transform:translateY(20px); transition:opacity 1s ease, transform 1s ease;}
     .fade-in.show {opacity:1; transform:translateY(0);}
+
+    /* Desktop layout */
+@media screen and (min-width: 992px) {
+  .hero {
+    padding: 160px 40px;
+  }
+  .hero h1 {
+    font-size: 64px;
+  }
+  .hero p {
+    font-size: 24px;
+  }
+
+  section {
+    padding: 100px 60px;
+    margin: 60px auto;
+  }
+
+  /* Anggota (programs) tampil 4 kolom di desktop */
+  .programs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Artikel 3 kolom */
+  .articles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Galeri 5 kolom */
+  .gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* Kontak lebih kecil di tengah */
+  .contact {
+    max-width: 500px;
+    padding: 40px;
+  }
+
+  nav a {
+    font-size: 18px;
+    margin: 0 20px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -310,3 +355,4 @@
   </script>
 </body>
 </html>
+
