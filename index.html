@@ -109,49 +109,33 @@
     .fade-in {opacity:0; transform:translateY(20px); transition:opacity 1s ease, transform 1s ease;}
     .fade-in.show {opacity:1; transform:translateY(0);}
 
-    /* Desktop layout */
-@media screen and (min-width: 992px) {
-  .hero {
-    padding: 160px 40px;
+    /* Layout untuk mobile */
+@media screen and (max-width: 768px) {
+  .programs {
+    grid-template-columns: 1fr 1fr; /* 2 kolom saja di HP */
+    gap: 15px;
   }
-  .hero h1 {
-    font-size: 64px;
-  }
-  .hero p {
-    font-size: 24px;
+
+  .card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover; /* biar foto proporsional */
+    display: block;
   }
 
   section {
-    padding: 100px 60px;
-    margin: 60px auto;
+    padding: 40px 20px;
+    margin: 20px auto;
   }
 
-  /* Anggota (programs) tampil 4 kolom di desktop */
-  .programs {
-    grid-template-columns: repeat(4, 1fr);
+  .hero h1 {
+    font-size: 32px;
   }
-
-  /* Artikel 3 kolom */
-  .articles {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Galeri 5 kolom */
-  .gallery {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  /* Kontak lebih kecil di tengah */
-  .contact {
-    max-width: 500px;
-    padding: 40px;
-  }
-
-  nav a {
-    font-size: 18px;
-    margin: 0 20px;
+  .hero p {
+    font-size: 16px;
   }
 }
+
 
   </style>
 </head>
@@ -355,4 +339,5 @@
   </script>
 </body>
 </html>
+
 
