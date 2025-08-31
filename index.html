@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DKR Bungbulang</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      line-height:1.6;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    /* Background foto */
+    .bg {
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: url('img/bg.jpg') no-repeat center center;
+      background-size: cover;
+      z-index:-2;
+      transform: scale(1);
+      transition: transform 0.1s linear;
+    }
+
+    /* Overlay gelap */
+    .overlay {
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.55);
+      z-index:-1;
+    }
+
+    header {
+      background: rgba(37,99,235,0.85);
+      color:#fff; padding:15px 40px;
+      display:flex; justify-content:space-between;
+      align-items:center;
+      position:sticky; top:0; z-index:100;
+      border-radius:0 0 12px 12px;
+    }
+    header img {height:50px;}
+    nav a {color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;}
+    nav a:hover {text-decoration:underline;}
+
+    .hero {
+      text-align:center;
+      padding:120px 20px;
+    }
+    .hero h1 {font-size:48px; margin-bottom:20px; text-shadow:2px 2px 6px rgba(0,0,0,0.7);}
+    .hero p {font-size:20px; margin-bottom:30px; text-shadow:1px 1px 4px rgba(0,0,0,0.6);}
+    .btn {
+      background:#facc15; color:#333; padding:12px 25px;
+      border:none; cursor:pointer; font-weight:bold;
+      border-radius:8px; transition:all .3s;
+    }
+    .btn:hover {background:#eab308;}
+
+    section {
+      padding:80px 40px;
+      background: rgba(255,255,255,0.08);
+      border-radius:16px;
+      margin:40px auto;
+      max-width:1200px;
+      backdrop-filter: blur(6px);
+    }
+    section h2 {
+      text-align:center; margin-bottom:40px; font-size:32px;
+      color:#fefefe; text-shadow:1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .programs,.articles,.gallery {display:grid; gap:20px;}
+    .programs {grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+    .card {
+      background:rgba(255,255,255,0.15);
+      padding:20px; border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+      transition:.3s; color:#fff;
+      backdrop-filter: blur(4px);
+    }
+    .card:hover {transform:translateY(-5px);}
+    .card img {width:100%; border-radius:12px; margin-bottom:15px;}
+
+    .articles {grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+    .gallery {grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+    .gallery img {width:100%; border-radius:10px;}
+
+    .contact {
+      background:rgba(255,255,255,0.2);
+      border-radius:12px; max-width:600px;
+      margin:0 auto; padding:30px;
+      backdrop-filter: blur(6px);
+    }
+    .contact input,.contact textarea {
+      width:100%; padding:12px; margin:10px 0;
+      border:1px solid #ccc; border-radius:8px;
+    }
+    .contact button {width:100%;}
+    footer {
+      background:rgba(30,58,138,0.85);
+      color:#fff; text-align:center; padding:25px;
+      border-radius:12px 12px 0 0;
+    }
+
+    /* Animasi scroll */
+    .fade-in {opacity:0; transform:translateY(20px); transition:opacity 1s ease, transform 1s ease;}
+    .fade-in.show {opacity:1; transform:translateY(0);}
+  </style>
+</head>
+<body>
+  <!-- Background -->
+  <div class="bg" id="bg"></div>
+  <div class="overlay"></div>
+
+  <header>
+    <img src="img/logo.png" alt="DKR Bungbulang">
+    <nav>
+      <a href="#program">Anggota</a>
+      <a href="#artikel">Artikel</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>DKR Bungbulang</h1>
+    <p>Satya Kudarmakan, Dharma Kubaktikan</p>
+    <a href="#program"><button class="btn">Lihat Anggota Kami</button></a>
+  </section>
+
+  <section id="program" class="fade-in">
+    <h2>Anggota</h2>
+    <div class="programs">
+      <div class="card">
+        <img src="img/ketua.jpg" alt="Perkemahan">
+        <h3>Ketua</h3>
+        <p>Rifki Abdul Hadi</p>
+      </div>
+      <div class="card">
+        <img src="img/wakil.jpg" alt="Bakti Sosial">
+        <h3>Wakil Ketua</h3>
+        <p>Windy Sri Yuliani.</p>
+      </div>
+      <div class="card">
+        <img src="img/sekretaris.jpg" alt="Lomba Tingkat">
+        <h3>Sekretaris</h3>
+        <p>Hofaf Dinan Anaza</p>
+      </div>
+      <div class="card">
+        <img src="img/bendahara.jpg" alt="Lomba Tingkat">
+        <h3>Bendahara</h3>
+        <p>Ai Muslimatul </p>
+      </div>
+      <div class="card">
+        <img src="img/dea.jpg" alt="Lomba Tingkat">
+        <h3>Ketua Bidang Kajian Kepramukaaan</h3>
+        <p>Dea Irawan</p>
+      </div>
+      <div class="card">
+        <img src="img/nurfa.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Nurfadillah Khomsyah</p>
+      </div>
+      <div class="card">
+        <img src="img/hilmi.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Muhammad Hilmi</p>
+      </div>
+      <div class="card">
+        <img src="img/rini.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Rini Astriyani</p>
+      </div>
+      <div class="card">
+        <img src="img/repil.jpg" alt="Lomba Tingkat">
+        <h3>Ketua Bidang Kegiatan Kepramukaan </h3>
+        <p>Repil Muhammad Abdillah</p>
+      </div>
+      <div class="card">
+        <img src="img/ahid.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Ahid Nugraha</p>
+      </div>
+      <div class="card">
+        <img src="img/ayu.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Ayu Parida</p>
+      </div>
+      <div class="card">
+        <img src="img/divka.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Divka Mizabul Adzkar</p>
+      </div>
+      <div class="card">
+        <img src="img/fathi.jpg" alt="Lomba Tingkat">
+        <h3>Ketua Bidang Pembinaan dan Pengembangan</h3>
+        <p>Fathi Sidiq</p>
+      </div>
+      <div class="card">
+        <img src="img/fahmi.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Fahmi Abdul Aziz</p>
+      </div>
+      <div class="card">
+        <img src="img/dinda.jpg" alt="Lomba Tingkat">
+        <h3>Ketua Bidang Penelitian dan Evaluasi</h3>
+        <p>Dinda Nurasidah</p>
+      </div>
+      <div class="card">
+        <img src="img/hilma.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Hilma khoerunisa</p>
+      </div>
+      <div class="card">
+        <img src="img/tegar.jpg" alt="Lomba Tingkat">
+        <h3>Anggota</h3>
+        <p>Tegar Abwiansyah</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="artikel" class="fade-in">
+    <h2>Artikel & Berita</h2>
+    <div class="articles">
+      <div class="card">
+        <h3>SORAC - Scout of Ramadhan Competition</h3>
+        <p>Event Kompetisi yang diselenggarakan setiap Bulan Ramadhan sebagai sarana silaturahmi dan unjuk bakat yang mengutamakan keterampilan religius dan bernuansa Islami.</p>
+      </div>
+      <div class="card">
+        <h3>GTM - Gladi Tangkas Medan</h3>
+        <p>Kompetisi asah keterampilan dan ketangkasan Pramuka Penggalang se-Kecamatan Bungbulang dengan mengedepankan aspek kreativitas jiwa muda.</p>
+      </div>
+      <div class="card">
+        <h3>Lomba Tingkat Se-Kecamatan</h3>
+        <p>Kompetisi antar gugus depan untuk mengasah keterampilan pramuka penggalang.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeri" class="fade-in">
+    <h2>Galeri Kegiatan</h2>
+    <div class="gallery">
+      <img src="img/galeri1.jpg" alt="Galeri 1">
+      <img src="img/galeri2.jpg" alt="Galeri 2">
+      <img src="img/galeri3.jpg" alt="Galeri 3">
+      <img src="img/galeri4.jpg" alt="Galeri 4">
+      <img src="img/galeri5.jpg" alt="Galeri 5">
+      <img src="img/galeri6.jpg" alt="Galeri 6">
+       <img src="img/galeri7.jpg" alt="Galeri 7">
+        <img src="img/galeri8.jpg" alt="Galeri 8">
+      <img src="img/galeri9.jpg" alt="Galeri 9">
+      <img src="img/galeri10.jpg" alt="Galeri 10">
+      <img src="img/galeri11.jpg" alt="Galeri 11">
+       <img src="img/galeri12.jpg" alt="Galeri 12">
+        <img src="img/galeri13.jpg" alt="Galeri 13">
+         <img src="img/galeri14.jpg" alt="Galeri 14">
+        <img src="img/galeri15.jpg" alt="Galeri 15">
+    </div>
+  </section>
+
+  <section id="kontak" class="fade-in">
+    <h2>Kontak & Pendaftaran</h2>
+    <form class="contact" onsubmit="sendToWhatsApp(event)">
+      <input type="text" id="nama" placeholder="Nama Lengkap" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea rows="5" id="pesan" placeholder="Pesan atau Pendaftaran" required></textarea>
+      <button type="submit" class="btn">Kirim via WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DKR Bungbulang | Satya Kudarmakan Dharma Kubaktikan</p>
+  </footer>
+
+  <script>
+    // Animasi fade-in saat scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.2});
+    faders.forEach(f=>observer.observe(f));
+
+    // Zoom background saat scroll
+    const bg = document.getElementById("bg");
+    window.addEventListener("scroll", () => {
+      let scroll = window.scrollY;
+      let scale = 1 + scroll / 3000; // semakin scroll, semakin zoom
+      bg.style.transform = `scale(${scale})`;
+    });
+
+    // Kirim ke WhatsApp
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      let nama = document.getElementById("nama").value;
+      let email = document.getElementById("email").value;
+      let pesan = document.getElementById("pesan").value;
+      let nomor = "6283863709011";  // ganti dengan nomor WA resmi
+      let text = `Halo, saya ${nama} (${email}).%0A%0A${pesan}`;
+      let url = `https://wa.me/${nomor}?text=${text}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
